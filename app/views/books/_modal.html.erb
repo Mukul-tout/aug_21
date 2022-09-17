@@ -1,7 +1,8 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal"  remote= "true" data-bs-target="#staticBackdrop" href="/books/new">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal"  remote= "true" data-bs-target="#staticBackdrop" >
   New Book
 </button>
+
 <%= link_to "New Book", new_book_path, class: "btn btn-primary", method: :get , remote: true ,:"data-bs-toggle" =>"modal", :"data-bs-target" =>  "#staticBackdrop"%>
 
 <!-- Modal -->
@@ -13,7 +14,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <%#= render "form" %>
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

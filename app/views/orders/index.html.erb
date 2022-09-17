@@ -1,0 +1,21 @@
+<br><br>
+<br><br>
+<br><br>
+<br><br>
+<%= link_to "New Order", new_order_path %>
+
+<table border="2">
+  <tr>
+    <td>ID</td>
+    <td>NAME</td>
+    <td>PRICE</td>
+  </tr>
+  <% @orders&.each do |order| %>
+    <tr>
+      <td> <%= order.id %></td>
+      <td> <%= order.name %></td>
+      <td> <%= order.price %></td>
+      <td> <%= link_to "Edit", edit_order_path(order.id) %></td>
+    </tr>
+  <% end %>
+</table>

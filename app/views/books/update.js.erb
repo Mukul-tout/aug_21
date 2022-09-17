@@ -1,3 +1,3 @@
 $("#staticBackdrop").modal("hide");
 <% text = "<tr>  <td>#{@book.name} </td>  <td> #{@book.author}</td>  <td> </td>  </tr>" %>
-$("#book_table").append("<%= raw text %>")
+$("#book_table #book_<%= @book.id %>").html("<%= raw text %>")

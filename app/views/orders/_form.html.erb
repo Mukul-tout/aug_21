@@ -1,0 +1,9 @@
+<br><br>
+<br><br>
+<br><br>
+<%= form_with model: @order ,url: @path, method: @method do |f| %>
+	Name: <%= f.text_field :name %>
+  Price: 	<%= f.number_field :price %>
+
+  <%= f.submit "save" %>
+<% end %>
