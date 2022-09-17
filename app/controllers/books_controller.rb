@@ -1,9 +1,19 @@
+require 'csv'
+
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show edit update destroy ]
 
   # GET /books or /books.json
   def index
     @books = Book.all
+    binding.pry
+    respond_to do |format|
+      format.html { render 'index'}
+      format.csv do
+        response.headers['Content-Type'] = 'text/csv'
+        response.headers['Content-Disposition'] = "attachment; filename=leads.csv"
+      end
+    end
   end
 
   # GET /books/1 or /books/1.json

@@ -1,0 +1,5 @@
+<% header = ['Name', 'Author'] %>
+<%= CSV.generate_line header %>
+<% @books.each do |book| %>
+  <%= CSV.generate_line [book.name, book.author ] %>
+<% end %>
