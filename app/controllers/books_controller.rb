@@ -6,13 +6,9 @@ class BooksController < ApplicationController
   # GET /books or /books.json
   def index
     @books = Book.all
-    binding.pry
     respond_to do |format|
       format.html { render 'index'}
-      format.csv do
-        response.headers['Content-Type'] = 'text/csv'
-        response.headers['Content-Disposition'] = "attachment; filename=leads.csv"
-      end
+      format.csv { send_data Book.csv, filename: "posts-#{DateTime.now.strftime("%d%m%Y%H%M")}.csv"}
     end
   end
 
